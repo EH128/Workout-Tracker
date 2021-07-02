@@ -9,7 +9,7 @@
         <%=workout.date.toISOString().split('T')[0]%>
       </div>
     </div>
-    <% if (workout.description.length>3){%>
+    <% if (workout.description.length>30){%>
     <div class="special-text"><%=workout.description.substring(0,30)%>...</div>
     <%}else{%>
     <div class="special-text"><%=workout.description%></div>
