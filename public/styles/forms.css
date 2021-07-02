@@ -1,0 +1,44 @@
+@import "variables.css";
+
+.form-row {
+  display: flex;
+  margin: 1em 0;
+}
+.form-field {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  flex-basis: 0;
+  margin-left: 2em;
+}
+.form-field:first-child {
+  margin-left: 0;
+}
+.form-field input,
+.form-field textarea,
+.form-field select {
+  background-color: var(--field-background-color);
+  border: 3px solid var(--border-color);
+  border-radius: 0.25rem;
+  padding: 0.4em 0.5em;
+  color: var(--color-text);
+  font-size: 1.3em;
+  outline: none;
+}
+.form-field input:focus,
+.form-field textarea:focus,
+.form-field select:focus {
+  border-color: var(--form-color-focus);
+}
+.form-field textarea {
+  height: 150px;
+  resize: none;
+  font-size: 1.5em;
+}
+.form-field select,
+.input-date {
+  height: 47px;
+}
+.form-field select option {
+  background-color: rgb(173, 198, 252);
+}

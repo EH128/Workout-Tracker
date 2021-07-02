@@ -1,0 +1,26 @@
+<div class="info-container">
+  <div class="page-title"><%=name.name%></div>
+  <div class="btn-container">
+    <%- include("../partials/delete", {url: `/names/${name.id}/delete`})%>
+  </div>
+</div>
+<% workouts.forEach(workout=>{%>
+<div class="list-container">
+  <div class="info-container">
+    <div>
+      <div class="text"><%=workout.exercise.name%></div>
+      <div class="text"><%=workout.date.toISOString().split('T')[0]%></div>
+    </div>
+    <% if (workout.description.length>30){%>
+    <div class="text"><%=workout.description.substring(0,30)%>...</div>
+    <%}else{%>
+    <div class="text"><%=workout.description%></div>
+    <%}%>
+  </div>
+  <div class="btn-container">
+    <a class="btn btn-general" href="/workouts/<%=workout.id%>">View</a>
+    <a class="btn btn-general" href="/workouts/<%=workout.id%>/edit">Edit</a>
+    <%-include("../partials/delete", {url:`/workouts/${workout.id}/delete`}) %>
+  </div>
+</div>
+<%})%>

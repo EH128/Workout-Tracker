@@ -1,0 +1,36 @@
+  
+<div class="page-title">Post Workout</div>
+<form action="/workouts/create" method="POST">
+  <div class="form-row">
+    <div class="form-field">
+      <label class="text">Name</label>
+      <select name="name">
+        <% names.forEach(name=>{%>
+        <option label="<%=name.name%>" value="<%=name.id%>"></option>
+        <%})%>
+      </select>
+    </div>
+    <div class="form-field">
+      <label class="text">Exercise</label>
+      <select name="exercise">
+        <% exercises.forEach(exercise=>{%>
+        <option label="<%=exercise.name%>" value="<%=exercise.id%>"></option>
+        <%})%>
+      </select>
+    </div>
+    <div class="form-field">
+      <label class="text">Date</label>
+      <input class="input-date" type="date" name="date" />
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-field">
+      <label class="text">Description</label>
+      <textarea name="description"></textarea>
+    </div>
+  </div>
+  <div class="btn-container">
+    <a class="btn btn-red" href="/">Cancel</a>
+    <button class="btn btn-general" type="submit">Post</button>
+  </div>
+</form>

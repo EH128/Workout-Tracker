@@ -1,0 +1,61 @@
+@import "variables.css";
+@import "nav.css";
+@import "buttons.css";
+@import "forms.css";
+
+:root {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body {
+  background: linear-gradient(
+    to right,
+    var(--color-background-dark),
+    var(--color-background-light)
+  );
+  color: var(--color-text);
+}
+.container {
+  max-width: 1200px;
+  margin: auto;
+  margin-bottom: 3em;
+}
+.content {
+  margin: 0 3em;
+}
+.page-title {
+  font-size: 1.8em;
+}
+.list-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 3px solid var(--border-color);
+  border-radius: 0.5rem;
+  padding: 1em;
+  margin: 1em 0;
+  background-color: var(--field-background-color);
+}
+.info-container {
+  display: flex;
+  flex-basis: 50%;
+  justify-content: space-between;
+  align-items: center;
+}
+.text {
+  font-size: 1.5em;
+  line-height: 1.6em;
+  text-decoration: none;
+  color: var(--color-text);
+}
+.special-text {
+  font-size: 1.3em;
+  line-height: 1.4em;
+}
+.column {
+  flex-direction: column;
+}

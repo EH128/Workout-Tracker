@@ -1,0 +1,19 @@
+<div class="page-title">Create Exercise</div>
+<form action="/exercises/create" method="POST">
+  <div class="form-row">
+    <div class="form-field">
+      <label class="text">Exercise</label>
+      <input type="text" name="exercise" autocomplete="off" autofocus />
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-field">
+      <label class="text">Description</label>
+      <textarea name="description"></textarea>
+    </div>
+  </div>
+  <div class="btn-container">
+    <a class="btn btn-red" href="/exercises">Cancel</a>
+    <button class="btn btn-general" type="submit">Create</button>
+  </div>
+</form>

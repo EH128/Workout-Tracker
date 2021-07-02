@@ -1,0 +1,10 @@
+<div class="page-title">Names</div>
+<% names.forEach(name => {%>
+<div class="list-container">
+  <a class="text" href="/names/<%= name.id %>"> <%= name.name %> </a>
+  <div class="btn-container">
+    <a class="btn btn-general" href="/names/<%=name.id%>">View</a>
+    <%-include("../partials/delete", {url:`/names/${name.id}/delete`}) %>
+  </div>
+</div>
+<%})%>

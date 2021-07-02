@@ -1,0 +1,9 @@
+<div class="list-container column">
+  <div class="page-title"><%=exercise.name%></div>
+  <p class="text"><%=exercise.description%></p>
+  <div class="btn-container">
+    <a class="btn btn-general" href="/exercises/<%=exercise.id%>/edit">Edit</a>
+    <%- include("../partials/delete",
+    {url:`/exercises/${exercise.id}/delete`})%>
+  </div>
+</div>

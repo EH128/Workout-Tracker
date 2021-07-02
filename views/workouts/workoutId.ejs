@@ -1,0 +1,15 @@
+<div class="page-title">Workout Details</div>
+<div class="list-container column">
+  <div class="text">Name: <%=workout.name.name%></div>
+  <div class="text">Exercise: <%=workout.exercise.name%></div>
+  <div class="text">Date: <%=workout.date.toISOString().split('T')[0]%></div>
+  <div class="text">Description: <%=workout.description%></div>
+  <br />
+  <div class="btn-container">
+    <a class="btn btn-general" href="/names/<%=workout.name.id%>"
+      >More about <%=workout.name.name%></a
+    >
+    <a class="btn btn-general" href="/workouts/<%=workout.id%>/edit">Edit</a>
+    <%-include("../partials/delete", {url:`/workouts/${workout.id}/delete`}) %>
+  </div>
+</div>

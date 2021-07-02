@@ -1,0 +1,49 @@
+<div class="page-title">Edit Workout</div>
+<form action="/workouts/<%=workout.id%>/edit" method="POST">
+  <div class="form-row">
+    <div class="form-field">
+      <label class="text">Name</label>
+      <select name="name">
+        <% names.forEach(name=>{%> <% if (name.id==workout.name){%>
+        <option selected label="<%=name.name%>" value="<%=name.id%>"></option>
+        <%}else{%>
+        <option label="<%=name.name%>" value="<%=name.id%>"></option>
+        <%}%> <%})%>
+      </select>
+    </div>
+    <div class="form-field">
+      <label class="text">Exercise</label>
+      <select name="exercise">
+        <% exercises.forEach(exercise=>{%> <%
+        if(exercise.id==workout.exercise){%>
+        <option
+          selected
+          label="<%=exercise.name%>"
+          value="<%=exercise.id%>"
+        ></option>
+        <%}else{%>
+        <option label="<%=exercise.name%>" value="<%=exercise.id%>"></option>
+        <%}%> <%})%>
+      </select>
+    </div>
+    <div class="form-field">
+      <label class="text">Date</label>
+      <input
+        class="input-date"
+        type="date"
+        name="date"
+        value="<%=workout.date.toISOString().split('T')[0]%>"
+      />
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-field">
+      <label class="text">Description</label>
+      <textarea name="description"><%=workout.description%></textarea>
+    </div>
+  </div>
+  <div class="btn-container">
+    <a class="btn btn-red" href="/">Cancel</a>
+    <button class="btn btn-general" type="submit">Post</button>
+  </div>
+</form>
